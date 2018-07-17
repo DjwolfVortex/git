@@ -1,0 +1,23 @@
+Part1 = Instance.new("Part")
+Part1.Parent = game.Workspace
+Part1.Anchored = true
+Part1.Size = Vector3.new(2000, 1, 2000)
+Part1.Position = Vector3.new(1000, 250, 1000)
+
+Vehicle = game.Players.LocalPlayer.PlayerGui["A-Chassis Interface"].Car.Value
+Vehicle.PrimaryPart = Vehicle.DriveSeat
+Vehicle:SetPrimaryPartCFrame(CFrame.new(Part1.Position + Vector3.new(0, 1, 0)))
+game.Players.LocalPlayer.Character:MoveTo(Vector3.new(1000, 250, 1000))
+Pos1 = 2000
+while true do
+wait(0)
+print("Teleporting")
+Pos1 = Pos1 + 100000
+X = Instance.new("Part")
+X.Parent = game.Workspace
+X.Anchored = true
+X.Size = Vector3.new(2000, 1, 2000)
+X.Position = Vector3.new(Pos1, 250, Pos1)
+game.Players.LocalPlayer.Character:MoveTo(Vector3.new(Pos1, 250, Pos1))
+Vehicle:SetPrimaryPartCFrame(CFrame.new(X.Position + Vector3.new(0, 1, 0)))
+end
